@@ -1,23 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1> Nayem's Portfolio</h1>
-  <h2> I am a web developer</h2>
-  <hr/>
-  <a href="./movie-ranking.html"> Movie Ranking project</a>
-  <br>
-  <img src="./images/movie-ranking-preview.png" alt="moview" height="200">
-  <br>
-  <a href="./birthdayInvite.html"> Birthday Invite project</a>
-  <br>
-  <img src="./images/preview-birthday-invite.png" alt="moview" height="200">
-  <hr/>
-  <a href="./about.html">About me</a>
-  <a href="./contact.html">Contact us</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check it out</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #question-container {
+        margin-bottom: 20px;
+      }
+
+      #question {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+
+      #yes-button {
+        background-color: #4caf50; /* Green */
+      }
+
+      #no-button {
+        background-color: #f44336; /* Red */
+      }
+      .tenor-gif-embed {
+        text-align: center;
+      }
+      .img-first {
+        height: 400px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="question-container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="10012230355003332465"
+        data-share-method="host"
+        data-aspect-ratio="1"
+        data-width="50%"
+      >
+        <a
+          href="https://tenor.com/view/goma-goma-cat-goma-peach-goma-peach-love-peach-and-goma-gif-10012230355003332465"
+          >Goma Goma Cat Sticker</a
+        >from <a href="https://tenor.com/search/goma-stickers">Goma Stickers</a>
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <div id="question">
+        <p>Hi Ela</p>
+        <p>
+          There are around 7.88 billion people in the world. Do you want to see the prettiest person on the planet?</p>
+      </div>
+    </div>
+    <div class="button-container">
+      <a id="my-anchor" href="./public/yay.html"></a>
+      <button class="button" id="yes-button" onclick="triggerAnchorClick()">Yes</button>
+      <button class="button" id="no-button" onclick="increaseYesButtonSize()">
+        No
+      </button>
+    </div>
+
+    <script>
+      var indx = 0;
+      var list = [
+        'No',
+        'Are you sure?',
+        'Really sure!',
+        'Think again',
+        'Last Chance!',
+        'Surely not?',
+        'You might regret this!',
+        'Give it another thought!',
+        'Are you absolutely certain?',
+        'This could be a mistake!',
+        'Have a heart!',
+        "Don't be so cold!",
+        "Change of heart?",
+        "wouldn't you reconsider?",
+        "Is that your final answer?",
+        "You are breaking my heart ;("
+      ]
+      function increaseYesButtonSize() {
+        var yesButton = document.getElementById("yes-button");
+        var currentFontSize = parseFloat(
+          window.getComputedStyle(yesButton).fontSize
+        );
+        var newSize = currentFontSize * 1.2; // Increase by 5%
+        yesButton.style.fontSize = newSize + "px";
+        
+        var noButton = document.getElementById('no-button');
+        var currentText = noButton.innerText;
+        if(indx + 1 < list.length)
+          indx++;
+        else indx = 1;
+        console.log(indx);
+        console.log(list[indx]);
+        noButton.innerText = list[indx];
+
+      }
+      function triggerAnchorClick() {
+      var anchorElement = document.getElementById('my-anchor');
+      anchorElement.click();
+    }
+    </script>
+  </body>
 </html>
